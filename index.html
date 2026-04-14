@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAT | Jhon Albert Toledo - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">JAT</div>
+        <nav class="nav-links">
+            <a href="#home" class="nav-btn active">Home</a>
+            <a href="#about" class="nav-btn">About</a>
+            <a href="#skills" class="nav-btn">Skills</a>
+            <a href="#projects" class="nav-btn">Projects</a>
+            <a href="#contact" class="nav-btn">Contact</a>
+        </nav>
+
+        <div class="theme-toggle" id="themeToggle">
+            <i class="fas fa-sun sun-icon"></i>
+            <i class="fas fa-moon moon-icon"></i>
+        </div>
+    </header>
+
+    <!-- HOME SECTION -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Hi, I'm <br><span id="type-name" class="name-gradient"></span><span class="cursor">|</span></h1>
+            <h3 class="role">Frontend Developer</h3>
+            <p class="description">Building sleek digital experiences with precision and modern design. Passionate about creating interactive web applications.</p>
+            <div class="hero-btns">
+                <a href="#projects" class="btn-primary">View My Work</a>
+                <a href="#contact" class="btn-outline">Contact Me</a>
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <div class="tech-container" id="photoContainer">
+                <div class="tech-ring ring-outer"></div>
+                <div class="tech-ring ring-inner"></div>
+                <div class="img-circle" id="profilePhoto">
+                    <img src="jat.png" alt="Jhon Albert Toledo" id="profileImg">
+                    <div class="photo-overlay">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about-section">
+        <div class="section-container">
+            <h2 class="section-title">About <span>Me</span></h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>I'm <span class="highlight">Jhon Albert U. Toledo</span></h3>
+                    <p class="age"><i class="fas fa-birthday-cake"></i> 19 years old</p>
+                    <p class="about-desc">
+                        I'm a passionate <strong>Bachelor of Science in Information Technology</strong> student with a strong focus on frontend development and modern web technologies. I love creating beautiful, functional websites that provide great user experiences.
+                    </p>
+                    <p class="about-desc">
+                        Throughout my academic journey, I've developed various websites and applications, constantly learning and improving my skills. My goal is to become a professional web developer and contribute to innovative digital solutions.
+                    </p>
+                </div>
+                
+                <div class="education-timeline">
+                    <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4>Elementary</h4>
+                                <p>Atty. Blas Ople Memorial Elementary School</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4>High School</h4>
+                                <p>Nalundan National High School</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot active"></div>
+                            <div class="timeline-content">
+                                <h4>College (Current)</h4>
+                                <p>PHINMA University of Iloilo</p>
+                                <span class="course">BS Information Technology</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="skills-section">
+        <div class="section-container">
+            <h2 class="section-title">My <span>Skills</span></h2>
+            <p class="section-subtitle">Technologies I work with</p>
+            
+            <div class="skills-grid">
+                <div class="skill-card" data-skill="HTML">
+                    <div class="skill-icon">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <h4>HTML5</h4>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 95%"></div>
+                    </div>
+                </div>
+
+                <div class="skill-card" data-skill="CSS">
+                    <div class="skill-icon">
+                        <i class="fab fa-css3-alt"></i>
+                    </div>
+                    <h4>CSS3</h4>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%"></div>
+                    </div>
+                </div>
+
+                <div class="skill-card" data-skill="JavaScript">
+                    <div class="skill-icon">
+                        <i class="fab fa-js"></i>
+                    </div>
+                    <h4>JavaScript</h4>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%"></div>
+                    </div>
+                </div>
+
+                <div class="skill-card" data-skill="Bootstrap">
+                    <div class="skill-icon">
+                        <i class="fab fa-bootstrap"></i>
+                    </div>
+                    <h4>Bootstrap</h4>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 88%"></div>
+                    </div>
+                </div>
+
+                <div class="skill-card" data-skill="React">
+                    <div class="skill-icon">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <h4>React JS</h4>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 75%"></div>
+                    </div>
+                </div>
+
+                <div class="skill-card" data-skill="Java">
+                    <div class="skill-icon">
+                        <i class="fab fa-java"></i>
+                    </div>
+                    <h4>Java</h4>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 70%"></div>
+                    </div>
+                </div>
+
+                <div class="skill-card" data-skill="Python">
+                    <div class="skill-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h4>Python</h4>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 65%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="projects-section">
+        <div class="section-container">
+            <h2 class="section-title">My <span>Projects</span></h2>
+            <p class="section-subtitle">Some of my recent work</p>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Relapse Song Website</h3>
+                        <p>A music streaming platform featuring relapse songs with modern UI and audio player functionality.</p>
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image game-bg">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Relapse Game</h3>
+                        <p>An interactive web-based game with engaging gameplay mechanics and responsive design.</p>
+                        <div class="project-tags">
+                            <span>JavaScript</span>
+                            <span>HTML5 Canvas</span>
+                            <span>CSS</span>
+                            <span>PYTHON</span>
+                        </div>
+                        <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image love-bg">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Valentine Website</h3>
+                        <p>A romantic website for couples featuring interactive elements and beautiful animations.</p>
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact-section">
+        <div class="section-container">
+            <h2 class="section-title">Get In <span>Touch</span></h2>
+            <p class="section-subtitle">Let's work together</p>
+            
+            <div class="contact-grid">
+                <div class="contact-card" onclick="copyToClipboard('https://www.facebook.com/share/18ZJJ16zFb', 'fb-tooltip')">
+                    <div class="contact-icon facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </div>
+                    <h4>Facebook</h4>
+                    <p>Connect with me</p>
+                    <div class="copy-indicator">
+                        <i class="fas fa-copy"></i>
+                        <span>Copy Link</span>
+                    </div>
+                    <div class="tooltip" id="fb-tooltip">Copied!</div>
+                </div>
+
+                <div class="contact-card email-card">
+                    <div class="contact-icon email">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h4>Email</h4>
+                    <p>jhontoledo1w@gmail.com</p>
+                    <div class="copy-indicator" onclick="copyToClipboard('jhontoledo1w@gmail.com', 'email-tooltip')">
+                        <i class="fas fa-copy"></i>
+                        <span>Copy</span>
+                    </div>
+                    <div class="tooltip" id="email-tooltip">Copied!</div>
+                </div>
+
+                <div class="contact-card" onclick="copyToClipboard('https://github.com/jhontoledo1w-ui', 'git-tooltip')">
+                    <div class="contact-icon github">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <h4>GitHub</h4>
+                    <p>View my code</p>
+                    <div class="copy-indicator">
+                        <i class="fas fa-copy"></i>
+                        <span>Copy Link</span>
+                    </div>
+                    <div class="tooltip" id="git-tooltip">Copied!</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">JAT</div>
+            <p class="footer-text">© 2026 Jhon Albert Toledo. All rights reserved.</p>
+            <div class="footer-social">
+                <a href="https://www.facebook.com/share/18ZJJ16zFb" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://github.com/jhontoledo1w-ui" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="mailto:jhontoledo1w@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
