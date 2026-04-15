@@ -203,13 +203,12 @@ body.dark-mode .moon-icon {
     transition: all 0.4s ease;
 }
 
-/* ===== HERO BUTTONS - UPDATED (Lines 193-235) ===== */
+/* ===== HERO BUTTONS ===== */
 .hero-btns { 
     display: flex; 
     gap: 20px; 
 }
 
-/* VIEW MY WORK - Same as Contact Me (Outline style) */
 .btn-primary { 
     padding: 16px 40px; 
     border-radius: 50px; 
@@ -221,19 +220,32 @@ body.dark-mode .moon-icon {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    border: 2px solid var(--accent); 
-    color: var(--text-main); 
-    background: transparent;
+    background: var(--primary-gradient); 
+    color: white !important; 
+    box-shadow: 0 10px 30px rgba(0,123,255,0.3);
+    border: none;
 }
 
-.btn-primary:hover {
-    background: var(--accent);
-    color: white;
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+.btn-primary:hover { 
     transform: translateY(-4px) scale(1.05);
     box-shadow: 0 15px 35px rgba(0,123,255,0.4);
 }
 
-/* CONTACT ME - Same as View My Work */
 .btn-outline { 
     padding: 16px 40px; 
     border-radius: 50px; 
@@ -271,6 +283,7 @@ body.dark-mode .moon-icon {
     display: flex; 
     align-items: center; 
     justify-content: center;
+    /* Removed: cursor: pointer - hindi na clickable */
 }
 
 .tech-ring { 
@@ -304,13 +317,17 @@ body.dark-mode .moon-icon {
     z-index: 10; 
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     position: relative;
+    /* Removed: transition - static na lang */
 }
 
 .img-circle img { 
     width: 100%; 
     height: 100%; 
     object-fit: cover; 
+    /* Removed: transition - static na lang */
 }
+
+/* Removed: .photo-overlay - wala nang hover effect */
 
 @keyframes rotateTech { 
     from { transform: rotate(0deg); } 
