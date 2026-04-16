@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JAT | Jhon Albert Toledo - Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -12,7 +12,13 @@
 
     <!-- NAVBAR -->
     <header class="navbar">
-        <div class="logo">JAT</div>
+        <div class="logo">
+            <span class="logo-j">J</span>
+            <span class="logo-a">A</span>
+            <span class="logo-t">T</span>
+        </div>
+        
+        <!-- Desktop Navigation -->
         <nav class="nav-links">
             <a href="#home" class="nav-btn active">Home</a>
             <a href="#about" class="nav-btn">About</a>
@@ -21,11 +27,29 @@
             <a href="#contact" class="nav-btn">Contact</a>
         </nav>
 
+        <!-- Mobile Menu Button -->
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+
         <div class="theme-toggle" id="themeToggle">
             <i class="fas fa-sun sun-icon"></i>
             <i class="fas fa-moon moon-icon"></i>
         </div>
     </header>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay">
+        <nav class="mobile-nav-links">
+            <a href="#home" class="mobile-nav-btn active">Home</a>
+            <a href="#about" class="mobile-nav-btn">About</a>
+            <a href="#skills" class="mobile-nav-btn">Skills</a>
+            <a href="#projects" class="mobile-nav-btn">Projects</a>
+            <a href="#contact" class="mobile-nav-btn">Contact</a>
+        </nav>
+    </div>
 
     <!-- HOME SECTION -->
     <section id="home" class="hero">
@@ -34,7 +58,7 @@
             <h3 class="role">Frontend Developer</h3>
             <p class="description">Building sleek digital experiences with precision and modern design. Passionate about creating interactive web applications.</p>
             <div class="hero-btns">
-                <a href="#projects" class="btn-primary">View My Work</a>
+                <a href="#projects" class="btn-outline">View My Work</a>
                 <a href="#contact" class="btn-outline">Contact Me</a>
             </div>
         </div>
@@ -43,6 +67,7 @@
             <div class="tech-container" id="photoContainer">
                 <div class="tech-ring ring-outer"></div>
                 <div class="tech-ring ring-inner"></div>
+                <div class="tech-ring ring-pulse"></div>
                 <div class="img-circle" id="profilePhoto">
                     <img src="jat.png" alt="Jhon Albert Toledo" id="profileImg">
                     <div class="photo-overlay">
@@ -76,7 +101,7 @@
                             <div class="timeline-dot"></div>
                             <div class="timeline-content">
                                 <h4>Elementary</h4>
-                                <p>Atty. Blas and Memorial Elementary School</p>
+                                <p>Atty. Blas and Maria Gerona Memorial Elementary School</p>
                             </div>
                         </div>
                         <div class="timeline-item">
@@ -291,7 +316,11 @@
     <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-content">
-            <div class="footer-logo">JAT</div>
+            <div class="footer-logo">
+                <span class="logo-j">J</span>
+                <span class="logo-a">A</span>
+                <span class="logo-t">T</span>
+            </div>
             <p class="footer-text">© 2026 Jhon Albert Toledo. All rights reserved.</p>
             <div class="footer-social">
                 <a href="https://www.facebook.com/share/18ZJJ16zFb" target="_blank"><i class="fab fa-facebook"></i></a>
