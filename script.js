@@ -11,7 +11,52 @@ function typeWriter() {
     }
 }
 
-// ===== THEME TOGGLE - NO PHOTO EFFECTS =====
+// ===== MOBILE MENU TOGGLE =====
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+const mobileNavBtns = document.querySelectorAll('.mobile-nav-btn');
+
+function toggleMobileMenu() {
+    mobileMenuBtn.classList.toggle('active');
+    mobileNavOverlay.classList.toggle('active');
+    
+    // Prevent body scroll when menu is open
+    if (mobileNavOverlay.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = '';
+    }
+}
+
+mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+
+// Close mobile menu when clicking nav links
+mobileNavBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = btn.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+        
+        toggleMobileMenu();
+        
+        // Small delay to allow menu to close before scrolling
+        setTimeout(() => {
+            targetSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }, 300);
+    });
+});
+
+// Close mobile menu when clicking outside
+mobileNavOverlay.addEventListener('click', (e) => {
+    if (e.target === mobileNavOverlay) {
+        toggleMobileMenu();
+    }
+});
+
+// ===== THEME TOGGLE =====
 const themeToggle = document.getElementById('themeToggle');
 const storedTheme = localStorage.getItem('theme');
 
@@ -20,7 +65,7 @@ if (storedTheme === 'dark') {
     document.body.classList.add('dark-mode');
 }
 
-// Theme toggle - smooth lang walang photo effects
+// Theme toggle
 themeToggle.addEventListener('click', () => {
     const isDark = document.body.classList.contains('dark-mode');
     
@@ -42,12 +87,6 @@ themeToggle.addEventListener('click', () => {
         themeToggle.style.transform = 'scale(1)';
     }, 200);
 });
-
-// ===== PHOTO CLICK - WALANG THEME TOGGLE =====
-const photoContainer = document.getElementById('photoContainer');
-
-// Removed: Hindi na nagt-toggle ng dark mode yung photo
-// Static na lang yung photo, walang effect
 
 // ===== NAVBAR BACKGROUND =====
 function updateNavbarBackground() {
@@ -99,10 +138,19 @@ window.addEventListener('scroll', () => {
         }
     });
     
+    // Update desktop nav
     navLinks.forEach(link => {
         link.classList.remove('active');
         if (link.getAttribute('href') === `#${current}`) {
             link.classList.add('active');
+        }
+    });
+    
+    // Update mobile nav
+    mobileNavBtns.forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('href') === `#${current}`) {
+            btn.classList.add('active');
         }
     });
     
@@ -192,7 +240,7 @@ revealElements.forEach(el => {
     revealObserver.observe(el);
 });
 
-// ===== DARK MODE ENTRANCE EFFECTS (SECTIONS ONLY) =====
+// ===== DARK MODE ENTRANCE EFFECTS =====
 function applyDarkModeEntranceEffects() {
     const allSections = document.querySelectorAll('section');
     
@@ -226,6 +274,17 @@ function applyDarkModeEntranceEffects() {
     });
 }
 
+// ===== LOGO INTERACTION =====
+const logo = document.querySelector('.logo');
+if (logo) {
+    logo.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
 // ===== INITIALIZE =====
 document.addEventListener('DOMContentLoaded', () => {
     typeWriter();
@@ -235,14 +294,26 @@ document.addEventListener('DOMContentLoaded', () => {
     if (heroContent) {
         heroContent.style.animation = 'fadeInUp 1s ease';
     }
+    
+    // Add fade in animation keyframes
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    `;
+    document.head.appendChild(style);
 });
 
-// Add keyframes
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes fadeInUp {
-        from { opacity: 0; transform: translateY(30px); }
-        to { opacity: 1; transform: translateY(0); }
+// Handle resize - close mobile menu on desktop
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 768 && mobileNavOverlay.classList.contains('active')) {
+        toggleMobileMenu();
     }
-`;
-document.head.appendChild(style);
+});
