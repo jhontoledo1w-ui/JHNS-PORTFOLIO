@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+/* Dark mode is toggled by adding the "dark-mode" class to <body> */
+@custom-variant dark (&:where(.dark-mode, .dark-mode *));
+
+:root {
+  --bg-color: #ffffff;
+  --text-main: #002d62;
+  --accent: #007bff;
+  --primary-gradient: linear-gradient(135deg, #007bff, #00d4ff);
+  --nav-btn-bg: rgba(0, 123, 255, 0.1);
+  --card-bg: rgba(0, 45, 98, 0.05);
+  --border-color: rgba(0, 123, 255, 0.2);
+}
+
+body.dark-mode {
+  --bg-color: #001220;
+  --text-main: #ffffff;
+  --nav-btn-bg: rgba(255, 255, 255, 0.1);
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --border-color: rgba(255, 255, 255, 0.1);
+}
+
+@theme inline {
+  --font-sans: "Poppins", sans-serif;
+  --color-app-bg: var(--bg-color);
+  --color-main: var(--text-main);
+  --color-accent: var(--accent);
+  --color-navbtn: var(--nav-btn-bg);
+  --color-card: var(--card-bg);
+  --color-line: var(--border-color);
+}
+
+@utility bg-brand {
+  background: var(--primary-gradient);
+}
+
+@utility text-gradient {
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background: var(--bg-color);
+    color: var(--text-main);
+    transition: background-color 0.6s ease, color 0.4s ease;
+    overflow-x: hidden;
+    font-family: "Poppins", sans-serif;
+  }
+}
